@@ -1,4 +1,6 @@
-books = []
+from models import Library
+
+library = Library()
 
 while True:
     print("\n1. Добави книга")
@@ -9,13 +11,11 @@ while True:
 
     if choice == "1":
         title = input("Въведи име на книга: ")
-        books.append(title)
+        library.add_book(title)
         print("Книгата е добавена.")
 
     elif choice == "2":
-        print("Списък с книги:")
-        for book in books:
-            print(book)
+        library.show_books()
 
     elif choice == "3":
         break
